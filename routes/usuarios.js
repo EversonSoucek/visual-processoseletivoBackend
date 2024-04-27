@@ -8,6 +8,7 @@ router.route("/")
 
 
 router.route("/:id")
+    .get(controladorUsuario.getUsuarioPorId)
     .delete(controladorUsuario.deleteUsuario)
     .put(controladorUsuario.putUsuario);
 

@@ -53,10 +53,27 @@ const putUsuario = (req, res) => {
     });
 };
 
+const getUsuarioPorId = (req, res) => {
+    const id = req.params.id;
+
+    const q = "SELECT * FROM usuarios WHERE id = ?";
+
+    db.query(q, [id], (err, data) => {
+        if (err) return res.json(err);
+
+        if (data.length === 0) {
+            return res.status(404).json({ message: "Usuário não encontrado" });
+        }
+
+        return res.status(200).json(data[0]);
+    });
+};
+
 
 module.exports = {
     getUsuarios,
     postUsuarios,
     deleteUsuario,
-    putUsuario
+    putUsuario,
+    getUsuarioPorId
 }
