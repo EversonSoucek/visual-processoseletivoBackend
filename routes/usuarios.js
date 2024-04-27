@@ -9,5 +9,6 @@ router.route("/")
 
 router.route("/:id")
     .delete(controladorUsuario.deleteUsuario)
+    .put(controladorUsuario.putUsuario);
 
 module.exports = router;

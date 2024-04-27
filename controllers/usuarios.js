@@ -20,7 +20,7 @@ const postUsuarios = (req, res) => {
 
     db.query(q, [nome, cpf, email, numero], (err, data) => {
         if (err) return res.json(err);
-    
+
         return res.status(200).json(data);
     });
 };
@@ -40,9 +40,23 @@ const deleteUsuario = (req, res) => {
     });
 };
 
+const putUsuario = (req, res) => {
+    const { nome, cpf, email, numero } = req.body;
+    const id = req.params.id;
+
+    const q = "UPDATE usuarios SET nome = ?, cpf = ?, email = ?, numero = ? WHERE id = ?";
+
+    db.query(q, [nome, cpf, email, numero, id], (err, data) => {
+        if (err) return res.json(err);
+
+        return res.status(200).json(data);
+    });
+};
+
 
 module.exports = {
     getUsuarios,
     postUsuarios,
-    deleteUsuario
+    deleteUsuario,
+    putUsuario
 }
