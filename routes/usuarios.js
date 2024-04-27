@@ -4,5 +4,6 @@ const controladorUsuario = require('../controllers/usuarios')
 
 router.route("/")
     .get(controladorUsuario.getUsuarios)
+    .post(controladorUsuario.postUsuarios)
 
 module.exports = router;
