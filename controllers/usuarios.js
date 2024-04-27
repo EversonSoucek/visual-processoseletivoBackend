@@ -25,8 +25,24 @@ const postUsuarios = (req, res) => {
     });
 };
 
+const deleteUsuario = (req, res) => {
+    const id = req.params.id;
+
+    const q = `DELETE FROM usuarios WHERE id = ?`;
+
+    db.query(q, [id], (err, data) => {
+        if (err) {
+            console.error("Erro ao deletar usuário:", err);
+            return res.status(500).json({ error: "Erro interno do servidor" });
+        }
+
+        return res.status(200).json({ message: "Usuário deletado com sucesso" });
+    });
+};
+
 
 module.exports = {
     getUsuarios,
-    postUsuarios
+    postUsuarios,
+    deleteUsuario
 }

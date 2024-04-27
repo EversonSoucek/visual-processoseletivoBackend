@@ -6,4 +6,8 @@ router.route("/")
     .get(controladorUsuario.getUsuarios)
     .post(controladorUsuario.postUsuarios)
 
+
+router.route("/:id")
+    .delete(controladorUsuario.deleteUsuario)
+
 module.exports = router;
