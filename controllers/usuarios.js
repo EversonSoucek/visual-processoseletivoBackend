@@ -1,6 +1,6 @@
 const db = require("../config/db")
 
-const getUsuarios = (_, res) => {
+/*const getUsuarios = (_, res) => {
     const q = "SELECT * FROM usuarios";
 
     db.query(q, (err, data) => {
@@ -8,7 +8,19 @@ const getUsuarios = (_, res) => {
 
         return res.status(200).json(data)
     })
-}
+}*/
+
+const pool = require("../config/db");
+
+const getUsuarios = (_, res) => {
+    pool.query("SELECT * FROM usuarios", (err, data) => {
+        if (err) {
+            return res.status(500).json(err);
+        }
+        return res.status(200).json(data);
+    });
+};
+
 
 const postUsuarios = (req, res) => {
     const nome = req.body.nome;
