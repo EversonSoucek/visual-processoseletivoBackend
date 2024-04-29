@@ -13,7 +13,7 @@ app.use("/", require('./routes/usuarios'))
     console.log("Servidor rodando");
 })*/
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || porta;
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
