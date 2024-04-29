@@ -23,12 +23,31 @@ Api com funcionalidades para um crud.
 Primeira opção:
 Você pode acessa o projeto e baixar ele pelo <a href="https://github.com/EversonSoucek/visual-processoseletivoFrontEnd">Github</a>
 
+E pode criar o banco com essa query:
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` text NOT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `email` text NOT NULL,
+  `numero` bigint unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23;
+
+Segunda opção:
+Pode a acessar o projeto em <a href="https://visual-processoseletivo.vercel.app/">Projeto</a>
+Com as informações do banco em <a href="https://processo-seletivo-backend-9ae3435cd654.herokuapp.com/">Link</a>
 
 ## :computer: Rodar o projeto
 
+#### Localmente
 Com o banco criado abra o projeto e execute `npm i` para instalar as dependências e `npm start` para inicar o projeto
 
-Com isso o seu servidor vai estar rodando, acesse <a href="http://localhost:3500/">http://localhost:3500/</a> no seu navegador caso queira ver os dados
+Com isso o seu servidor vai estar rodando, acesse <a href="http://localhost:3500/">http://localhost:3500/</a> no seu navegador caso queira ver os dados locais
+
+#### Servidor
+Para ver os dados do servidor vá para <a href="https://processo-seletivo-backend-9ae3435cd654.herokuapp.com/">Link</a>
+
+O projeto completo está em <a href="https://visual-processoseletivo.vercel.app/">Projeto</a>
 
 ## :pencil: Autores
 
