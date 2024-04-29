@@ -31,7 +31,7 @@ CREATE TABLE `usuarios` (
   `email` text NOT NULL,
   `numero` bigint unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23;
+) ENGINE=InnoDB AUTO_INCREMENT=0;
 
 Segunda opção:
 Pode a acessar o projeto em <a href="https://visual-processoseletivo.vercel.app/">Projeto</a>
